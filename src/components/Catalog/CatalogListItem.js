@@ -1,7 +1,5 @@
 import React from "react";
-//import PropTypes from "prop-types";
-
-import img from "../../assets/img/1.jpg";
+import PropTypes from "prop-types";
 
 import BaseButton from "../Base/BaseButton";
 import BaseButtonIcon from "../Base/BaseButtonIcon";
@@ -11,9 +9,9 @@ class CatalogListItem extends React.Component {
         return (
             <div className="catalog__item">
                 <div className="catalog__item-avatar">
-                    <img src={img} alt="img"/>
+                    <img src={ this.props.data.image } alt="img"/>
                 </div>
-                <p className="catalog__item-title">Luke Skywalker</p>
+                <p className="catalog__item-title">{ this.props.data.name }</p>
                 <div className="catalog__item-button-wrapper">
                     <BaseButton title={"Перейти"}/>
                     <BaseButtonIcon
@@ -26,8 +24,8 @@ class CatalogListItem extends React.Component {
     }
 }
 
-/*CatalogListItem.propTypes = {
-
-};*/
+CatalogListItem.propTypes = {
+    data: PropTypes.object.isRequired
+};
 
 export default CatalogListItem;

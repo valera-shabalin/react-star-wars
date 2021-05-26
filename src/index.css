@@ -41,6 +41,21 @@ input {
     background: transparent;
 }
 
+.base-loader {
+    display: flex;
+    align-items: center;
+}
+
+.base-loader span {
+    margin-left: 8px;
+    font-weight: 700;
+    color: #272B30;
+}
+
+.base-loader svg {
+    animation: rotation 1s linear infinite;
+}
+
 .header {
     padding: 8px 20px;
     display: flex;
@@ -126,4 +141,13 @@ input {
 
 .catalog__item-button-wrapper a {
     margin: 0 5px;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

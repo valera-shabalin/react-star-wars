@@ -5,6 +5,7 @@ import HomePage from "./HomePage";
 import CatalogPage from "./CatalogPage";
 import AboutPage from "./AboutPage";
 import ContactPage from "./ContactPage";
+import PersonPage from "./PersonPage";
 import NotFoundPage from "./NotFoundPage";
 
 export default class Page extends React.Component {
@@ -24,6 +25,9 @@ export default class Page extends React.Component {
                         </Route>
                         <Route path="/contact">
                             <ContactPage/>
+                        </Route>
+                        <Route path="/person/:id">
+                            <PersonPage/>
                         </Route>
                         <Route>
                             <NotFoundPage/>

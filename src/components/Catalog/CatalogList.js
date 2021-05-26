@@ -6,24 +6,15 @@ export default class CatalogList extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col-lg-3 col-md-4">
-                    <CatalogListItem/>
-                </div>
-                <div className="col-lg-3 col-md-4">
-                    <CatalogListItem/>
-                </div>
-                <div className="col-lg-3 col-md-4">
-                    <CatalogListItem/>
-                </div>
-                <div className="col-lg-3 col-md-4">
-                    <CatalogListItem/>
-                </div>
-                <div className="col-lg-3 col-md-4">
-                    <CatalogListItem/>
-                </div>
-                <div className="col-lg-3 col-md-4">
-                    <CatalogListItem/>
-                </div>
+                {
+                    this.props.people.map((item, index) => {
+                        return (
+                            <div className="col-lg-3 col-md-4" key={index}>
+                                <CatalogListItem data={item}/>
+                            </div>
+                        );
+                    })
+                }
             </div>
         );
     }
