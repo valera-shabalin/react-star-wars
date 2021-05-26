@@ -10,6 +10,7 @@ export default class Header extends React.Component {
                 </div>
                 <div className="header__nav">
                     <Link to="/">Home</Link>
+                    <Link to="/catalog">Catalog</Link>
                     <Link to="/about">About</Link>
                     <Link to="/contact">Contact</Link>
                 </div>

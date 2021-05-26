@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import HomePage from "./HomePage";
+import CatalogPage from "./CatalogPage";
 import AboutPage from "./AboutPage";
 import ContactPage from "./ContactPage";
 import NotFoundPage from "./NotFoundPage";
@@ -13,16 +14,19 @@ export default class Page extends React.Component {
                 <div className="container">
                     <Switch>
                         <Route exact={true} path="/">
-                            <HomePage />
+                            <HomePage/>
                         </Route>
                         <Route path="/about">
-                            <AboutPage />
+                            <AboutPage/>
+                        </Route>
+                        <Route path="/catalog">
+                            <CatalogPage/>
                         </Route>
                         <Route path="/contact">
-                            <ContactPage />
+                            <ContactPage/>
                         </Route>
                         <Route>
-                            <NotFoundPage />
+                            <NotFoundPage/>
                         </Route>
                     </Switch>
                 </div>
