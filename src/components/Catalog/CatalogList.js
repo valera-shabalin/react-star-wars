@@ -10,7 +10,7 @@ export default class CatalogList extends React.Component {
                     this.props.people.map(item => {
                         return (
                             <div className="col-lg-3 col-md-4" key={item.id}>
-                                <CatalogListItem data={item}/>
+                                <CatalogListItem person={item}/>
                             </div>
                         );
                     })

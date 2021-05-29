@@ -6,7 +6,7 @@ export default class Header extends React.Component {
         return (
             <header className="header">
                 <div className="header__logo">
-                    <p>Star Wars</p>
+                    <NavLink exect to="/">Star Wars</NavLink>
                 </div>
                 <div className="header__nav">
                     <NavLink exact to="/" activeClass="active">Home</NavLink>

@@ -61,20 +61,17 @@ input {
 }
 
 .header {
-    padding: 8px 20px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 0 8px #EAF1FF;
 }
 
-.header__logo {
-
-}
-
-.header__logo p {
+.header__logo a {
     font-size: 20px;
     font-weight: 700;
+    text-decoration: none;
     color: #343a40;
 }
 

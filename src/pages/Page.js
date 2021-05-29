@@ -14,24 +14,12 @@ export default class Page extends React.Component {
             <main>
                 <div className="container">
                     <Switch>
-                        <Route exact={true} path="/">
-                            <HomePage/>
-                        </Route>
-                        <Route path="/about">
-                            <AboutPage/>
-                        </Route>
-                        <Route path="/catalog">
-                            <CatalogPage/>
-                        </Route>
-                        <Route path="/contact">
-                            <ContactPage/>
-                        </Route>
-                        <Route path="/person/:id">
-                            <PersonPage/>
-                        </Route>
-                        <Route>
-                            <NotFoundPage/>
-                        </Route>
+                        <Route exact path="/" component={HomePage}/>
+                        <Route path="/about" component={AboutPage}/>
+                        <Route exact path="/catalog" component={CatalogPage}/>
+                        <Route path="/catalog/:id(\d+)" component={PersonPage}/>
+                        <Route path="/contact" component={ContactPage}/>
+                        <Route path="*" component={NotFoundPage}/>
                     </Switch>
                 </div>
             </main>

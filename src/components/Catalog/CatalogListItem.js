@@ -1,19 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
-import BaseButton from "../Base/BaseButton";
 import BaseButtonIcon from "../Base/BaseButtonIcon";
 
 class CatalogListItem extends React.Component {
     render() {
+        const person = this.props.person;
+
         return (
             <div className="catalog__item">
                 <div className="catalog__item-avatar">
-                    <img src={ this.props.data.image } alt="img"/>
+                    <img src={ person.image } alt="img"/>
                 </div>
-                <p className="catalog__item-title">{ this.props.data.name }</p>
+                <p className="catalog__item-title">{ person.name }</p>
                 <div className="catalog__item-button-wrapper">
-                    <BaseButton title={"Перейти"}/>
+                    <NavLink className="base-button" to={`/catalog/${person.id}`}>View</NavLink>
                     <BaseButtonIcon
                         iconName={"bookmark"}
                         iconStyle={"far"}
@@ -25,7 +27,7 @@ class CatalogListItem extends React.Component {
 }
 
 CatalogListItem.propTypes = {
-    data: PropTypes.object.isRequired
+    person: PropTypes.object.isRequired
 };
 
 export default CatalogListItem;
