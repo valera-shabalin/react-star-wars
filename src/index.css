@@ -16,6 +16,10 @@ a {
     color: #343A40;
 }
 
+a.active {
+    text-decoration: underline;
+}
+
 a:hover {
     text-decoration: none;
 }

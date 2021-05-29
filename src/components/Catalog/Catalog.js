@@ -8,8 +8,11 @@ export default class Catalog extends React.Component {
         super(props);
         this.state = {
             isLoaded: false,
+            searchContent: '',
             people: []
         }
+
+        this.handleChange = event => this.setState({ searchContent: event.target.value })
     }
 
     async componentDidMount() {
@@ -27,16 +30,29 @@ export default class Catalog extends React.Component {
     }
 
     render() {
+        let catalogList;
+
+        if (this.state.isLoaded) {
+            catalogList = <CatalogList
+                people={this.state.people.filter(item => item.name.toLowerCase().includes(this.state.searchContent))}
+            />;
+        } else {
+            catalogList = <BaseLoader/>;
+        }
+
         return (
             <div className="catalog">
                 <div className="catalog__header">
-                    <input type="text" className="catalog__search" placeholder="Начните вводить имя персонажа"/>
+                    <input
+                        type="text"
+                        className="catalog__search"
+                        placeholder="Начните вводить имя персонажа"
+                        value={this.state.searchContent}
+                        onChange={this.handleChange}
+                    />
                 </div>
                 <div className="catalog__body">
-                    {/*<CatalogList people={ this.state.people.filter(item => item.name === "Luke Skywalker") } />*/}
-                    {
-                        this.state.isLoaded ? <CatalogList people={ this.state.people } /> : <BaseLoader/>
-                    }
+                    {catalogList}
                 </div>
             </div>
         );
