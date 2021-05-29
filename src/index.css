@@ -62,6 +62,7 @@ input {
 
 .header {
     padding: 20px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -142,6 +143,30 @@ input {
 
 .catalog__item-button-wrapper a {
     margin: 0 5px;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.person__avatar {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.person__avatar img {
+    max-width: 100%;
+}
+
+.person__info {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 @keyframes rotation {

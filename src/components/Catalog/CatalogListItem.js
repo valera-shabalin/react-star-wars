@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
-import BaseButtonIcon from "../Base/BaseButtonIcon";
-
 class CatalogListItem extends React.Component {
     render() {
         const person = this.props.person;
@@ -16,10 +14,6 @@ class CatalogListItem extends React.Component {
                 <p className="catalog__item-title">{ person.name }</p>
                 <div className="catalog__item-button-wrapper">
                     <NavLink className="base-button" to={`/catalog/${person.id}`}>View</NavLink>
-                    <BaseButtonIcon
-                        iconName={"bookmark"}
-                        iconStyle={"far"}
-                    />
                 </div>
             </div>
         );
